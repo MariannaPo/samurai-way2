@@ -5,16 +5,31 @@ import './App.css';
 function App() {
   return (
     <div>
-      One Div
-    <div className="App">
+      <Header/>
+      <Month/>
+    </div>
+  );
+}
+
+const Header=()=>{
+  return(
+    <div>
+      <a href='#'>Page </a>
+      <a href='#'>News </a>
+      <a href='#'>Music</a>
+    </div>
+  )
+}
+
+const Month=()=>{
+  return(
+    <div>
       <ul>
         <li>June</li>
         <li>Jule</li>
         <li>Augest</li>
       </ul>
-      </div>
-    </div>
-  );
+     </div>
+  )
 }
-
 export default App;
