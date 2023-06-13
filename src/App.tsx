@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Month from './components/Month';
 
 function App() {
   return (
@@ -11,25 +13,4 @@ function App() {
   );
 }
 
-const Header=()=>{
-  return(
-    <div>
-      <a href='#'>Page </a>
-      <a href='#'>News </a>
-      <a href='#'>Music</a>
-    </div>
-  )
-}
-
-const Month=()=>{
-  return(
-    <div>
-      <ul>
-        <li>June</li>
-        <li>Jule</li>
-        <li>Augest</li>
-      </ul>
-     </div>
-  )
-}
 export default App;
