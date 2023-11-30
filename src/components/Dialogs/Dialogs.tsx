@@ -17,19 +17,30 @@ const Message = (props: {message: string}) => {
     )
 }
 export const Dialogs = () => {
+
+    let dialogsData = [
+    { id: '1', name: 'Vladimir'},
+    { id: '2', name: 'Ilon'},
+    { id: '3', name: 'Sergey'},
+    {id: '4', name: 'Elvira'},
+    ];
+
+    let messageData = [
+        { id: '1', message: 'Будет новый закон'},
+        { id: '2', message: 'Я уже сделал новую машину'},
+        { id: '3', message: 'Открываю новую станцию, спишемся позже'},
+        {id: '4', message: 'Курс не упадет'},
+    ];
+    let dialogElements = dialogsData.map((dialog)=> <MessagesItems id={dialog.id} name={dialog.name}/>);
+    let messageElement = messageData.map((message)=>  <Message message={message.message}/>);
+
     return(
         <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <MessagesItems id='1' name='Vladimir'/>
-                    <MessagesItems id='2' name='Ilon'/>
-                   <MessagesItems id='3' name='Sergey'/>
-                    <MessagesItems id='4' name='Elvira'/>
+                    {dialogElements}
                 </div>
             <div className={s.messages}>
-                <Message message=" Будет новый закон"/>
-                <Message message="Я уже сделал новую машину"/>
-                <Message message="Открываю новую станцию, спишемся позже"/>
-                <Message message="Курс не упадет"/>
+                    {messageElement}
             </div>
         </div>
     )
