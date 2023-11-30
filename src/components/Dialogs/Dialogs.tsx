@@ -2,28 +2,34 @@ import React from "react";
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 
+const MessagesItems = (props: { id: string; name: string }) => {
+    let path = '/messages/' + props.id;
+    return(
+        <div className={s.dialog}>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
+    )
+}
+
+const Message = (props: {message: string}) => {
+    return(
+        <div className={s.message}>{props.message}</div>
+    )
+}
 export const Dialogs = () => {
     return(
         <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <div className={s.dialog + ' ' + s.active}>
-                        <NavLink to='/messages/1'>Vladimir</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to='/messages/2'>Ilon</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to='/messages/3'>Sergey</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to='/messages/4'>Elvira</NavLink>
-                    </div>
+                    <MessagesItems id='1' name='Vladimir'/>
+                    <MessagesItems id='2' name='Ilon'/>
+                   <MessagesItems id='3' name='Sergey'/>
+                    <MessagesItems id='4' name='Elvira'/>
                 </div>
             <div className={s.messages}>
-                <div className={s.message}>Будет новый закон</div>
-                <div className={s.message}>Я уже сделал новую машину</div>
-                <div className={s.message}>Открываю новую станцию, спишемся позже</div>
-                <div className={s.message}>Курс не упадет</div>
+                <Message message=" Будет новый закон"/>
+                <Message message="Я уже сделал новую машину"/>
+                <Message message="Открываю новую станцию, спишемся позже"/>
+                <Message message="Курс не упадет"/>
             </div>
         </div>
     )
