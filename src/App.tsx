@@ -10,15 +10,21 @@ import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 
 
-function App() {
+function App(props: any) {
+
+    // let postMessageData = [
+    //     {id: '1', postMessage: 'Hi, how are u?', likesCount: 27},
+    //     {id: '2', postMessage: 'Eee my first post', likesCount: 54},
+    // ];
+
   return (
     <BrowserRouter>
     <div className='app-wrapper'>
      <Header/>
      <Nav/>
      <div className='app-wrapper-content'>
-      <Route path='/messages' render={()=><Dialogs/>}/>
-      <Route path='/profile' render={()=><Profile/>}/>
+      <Route path='/messages' render={()=><Dialogs dialogsData={props.dialogsData} messageData={props.messageData}/>}/>
+      <Route path='/profile' render={()=><Profile postMessageData={props.postMessageData}/>}/>
       <Route path='/news' render={()=><News/>}/>
       <Route path='/music' render={()=><Music/>}/>
       <Route path='/settings' render={()=><Settings/>}/>
