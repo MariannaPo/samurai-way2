@@ -7,6 +7,7 @@ export const MessagesItems = (props: { id: string; name: string }) => {
     return(
         <div className={s.dialog}>
             <NavLink to={path}>{props.name}</NavLink>
+
         </div>
     )
 }

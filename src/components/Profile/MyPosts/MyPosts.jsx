@@ -11,11 +11,18 @@ export const MyPosts = (props) => {
     // ];
     let postElements = props.postMessageData.map((post)=><Post message={post.postMessage} likeCount={post.likesCount}/>);
 
+    let newPostElement = React.createRef()
+
+    let addPost = () =>{
+    let text = newPostElement.current.value;
+    alert(text)
+    }
+
     return (
         <div className={s.postsBlock}>
             <h3>My post</h3>
-            <textarea></textarea>
-            <button>ADD POST</button>
+            <textarea ref={newPostElement}></textarea>
+            <button onClick={addPost}>ADD POST</button>
             <button>REMOVE</button>
             <div className={s.posts}>
                 {postElements}

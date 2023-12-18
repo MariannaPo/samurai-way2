@@ -6,6 +6,10 @@ import {NavLink} from "react-router-dom";
 
 export const Message = (props: {message: string}) => {
     return(
-        <div className={s.message}>{props.message}</div>
+        <div>
+            <div className={s.message}>{props.message}</div>
+    </div>
+
+
     )
 }
